@@ -1,12 +1,7 @@
-var num = 1;
-
 function isInteger(num){
-  if ((num ^ 0) == num){
-    return true;
-  }
-  else {
-    return false;
-  }
+  return (num ^ 0) === num;
 }
 
-alert(isInteger(num));
+alert(isInteger(1));
+alert(isInteger(1.5));
+alert(isInteger(10));
