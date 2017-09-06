@@ -9,4 +9,4 @@ function isInteger(num){
   }
 }
 
-isInteger(num);
+alert(isInteger(num));
