@@ -33,7 +33,7 @@ alert( sum );
 
 // Exersize 3
 
-var salaries = {
+/* var salaries = {
   "Вася": 100,
   "Петя": 300,
   "Даша": 250
@@ -47,4 +47,26 @@ for (var key in salaries) {
   }
 }
 
-alert(nameMax);
+alert(nameMax || "нет сотрудников"); */
+
+//Exersize 4
+
+var menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+multiplyNumeric(menu);
+
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n)
+}
+
+function multiplyNumeric(obj) {
+  for (var field in obj) {
+    if ( isNumeric(obj[field]) ){
+      obj[field] *= 2;
+    }
+  }
+}
