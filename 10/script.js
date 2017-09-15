@@ -8,6 +8,7 @@ function ucFirst(str) {
 alert( ucFirst("") );
 */
 
+/*
 function checkSpam(str){
       return (
       (str.toLowerCase()).indexOf("viagra") != -1 ||
@@ -15,3 +16,15 @@ function checkSpam(str){
 }
 
 alert(checkSpam('viagra'));
+*/
+
+//truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) = "Вот, что мне хоте..."
+
+//truncate("Всем привет!", 20) = "Всем привет!"
+
+/*function turncate(str, len) {
+  return (str.substr(0, len) + "...");
+}
+
+alert( turncate("Вот, что мне хотелось бы сказать на эту тему:", 20) );
+*/
