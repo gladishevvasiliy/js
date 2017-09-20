@@ -23,6 +23,7 @@ function addClass(obj, cls) {
 }
 */
 
+/*
 alert( camelize("background-color") );
 alert( camelize("-webkit-transition") );
 alert( camelize("list-style-image") );
@@ -34,4 +35,92 @@ function camelize(str) {
     words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
   }
   return words.join("");
+}
+*/
+
+/*
+obj = {
+  className: 'my open menu menu'
+};
+
+removeClass(obj, 'menu');
+alert( obj.className );
+removeClass(obj, 'blabla'); // без изменений (нет такого класса)
+alert( obj.className );
+
+
+function removeClass(obj, cls) {
+  var classes = ( obj.className.split(' ') );
+
+  for (var i = 0; i < classes.length; i++) {
+    if(classes[i] == cls) {
+      classes.splice(i, 1);
+      i--;
+    }
+  }
+
+  obj.className = classes.join(" ");
+
+}
+*/
+
+/*
+arr = [5, 7, 1, 6, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4);
+alert( arr );
+
+function filterRangeInPlace(arr, a, b) {
+
+  for (var i = 0; i < arr.length; i++) {
+    var val = arr[i];
+    if (val < a || val > b) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+
+}
+
+*/
+
+/*
+var arr = [4, 1, 14, -1, 81];
+
+function compareReversed(a, b) {
+  return b - a;
+}
+
+arr.sort(compareReversed);
+
+alert( arr );
+
+*/
+
+/*
+var arr = ["HTML", "JavaScript", "CSS"];
+
+var arrSorted = arr.slice();
+arrSorted.sort();
+
+alert( arrSorted ); // CSS, HTML, JavaScript
+alert( arr ); // HTML, JavaScript, CSS (без изменений)
+
+*/
+
+
+var vasya = { name: "Вася", age: 23 };
+var masha = { name: "Маша", age: 18 };
+var vovochka = { name: "Вовочка", age: 6 };
+
+var people = [ vasya , masha , vovochka ];
+
+people.sort( compareAge );
+
+for(var i = 0; i < people.length; i++) {
+  alert(people[i].name);
+}
+
+function compareAge(personA, personB) {
+  return personA.age - personB.age;
 }
