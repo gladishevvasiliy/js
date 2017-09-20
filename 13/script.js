@@ -107,8 +107,8 @@ alert(arr);
 var sum = 0;
 for (var i = 0; i < arr.length; i++) {
   primeArr.push(arr[i]);
-  if !(isNaN(primeArr[i]){
-    sum = sum +primeArr[i];
+  if !(isNaN(primeArr[i]) {
+    sum = sum + primeArr[i];
   }
 }
 
