@@ -108,7 +108,7 @@ alert( arr ); // HTML, JavaScript, CSS (без изменений)
 
 */
 
-
+/*
 var vasya = { name: "Вася", age: 23 };
 var masha = { name: "Маша", age: 18 };
 var vovochka = { name: "Вовочка", age: 6 };
@@ -123,4 +123,30 @@ for(var i = 0; i < people.length; i++) {
 
 function compareAge(personA, personB) {
   return personA.age - personB.age;
+}
+
+*/
+var list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+};
+
+printList(list);
+
+function printList(list) {
+  var tmp = list;
+
+  while (tmp) {
+    alert(tmp.value);
+    tmp = tmp.next;
+  }
 }
