@@ -126,6 +126,8 @@ function compareAge(personA, personB) {
 }
 
 */
+
+/*
 var list = {
   value: 1,
   next: {
@@ -150,3 +152,40 @@ function printList(list) {
     tmp = tmp.next;
   }
 }
+
+*/
+
+/*
+var arr = ["Есть", "жизнь", "на", "Марсе"];
+
+var arrLength = arr.map(function(arr){
+  return arr.length;
+});
+
+//var arrLength = [];
+//for (var i = 0; i < arr.length; i++) {
+//  arrLength[i] = arr[i].length;
+//}
+
+alert( arrLength ); // 4,5,2,5
+
+*/
+
+var arr = [ 1, 2, 3, 4, 5 ];
+
+//getSums( arr ) = [ 1, 1+2, 1+2+3, 1+2+3+4, 1+2+3+4+5 ] = [ 1, 3, 6, 10, 15 ]
+
+function getSums( arr ) {
+  var result = [];
+  if (!arr.length) return result;
+
+  var fullSum = arr.reduce(function(sum, current) {
+    result.push(sum);
+    return sum + current;
+  });
+  result.push(fullSum);
+
+  return result;
+}
+
+alert(getSums( arr ));
