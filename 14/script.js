@@ -171,9 +171,9 @@ alert( arrLength ); // 4,5,2,5
 
 */
 
-var arr = [ 1, 2, 3, 4, 5 ];
+/*
 
-//getSums( arr ) = [ 1, 1+2, 1+2+3, 1+2+3+4, 1+2+3+4+5 ] = [ 1, 3, 6, 10, 15 ]
+var arr = [ 1, 2, 3, 4, 5 ];
 
 function getSums( arr ) {
   var result = [];
