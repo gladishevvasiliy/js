@@ -28,20 +28,30 @@ alert( sum(1)(2) );
 */
 
 function makeBuffer() {
-  var buff = []
-  return function () {
+  var buff = [];
+
+  function buffer() {
     if (arguments.length == 0){
       return buff.join(' ');
     }
     buff.push(arguments[0]);
+  };
+
+  buffer.clear = function() {
+    buff = [];
   }
 
-}
+  return buffer;
+};
+
+
 
 var buffer = makeBuffer();
 
-buffer('Замыкания');
-buffer(' Использовать');
-buffer(' Нужно!');
+buffer("Тест");
+buffer(" тебя не съест ");
+alert( buffer() ); // Тест тебя не съест
 
-alert( buffer() ); // Замыкания Использовать Нужно!
+buffer.clear();
+
+alert( buffer() ); // ""
