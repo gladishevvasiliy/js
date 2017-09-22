@@ -108,16 +108,16 @@ function getSecondsToTomorrow() {
 var d = new Date(2014, 0, 01); // 30 января 2014
 alert( formatDate(d) ); // '30.01.14'
 
-function formatDate(d) {
-  dd = d.getDate();
-  if (dd < 10) dd = '0' + dd;
+  function formatDate(d) {
+    dd = d.getDate();
+    if (dd < 10) dd = '0' + dd;
 
-  mm = d.getMonth() + 1;
-  if (mm < 10) mm = '0' + mm;
+    mm = d.getMonth() + 1;
+    if (mm < 10) mm = '0' + mm;
 
-  yy = String(d.getFullYear()).substring(2);
-  //yy = d.getFullYear();
+    yy = String(d.getFullYear()).substring(2);
+    //yy = d.getFullYear();
 
-  return dd + "." + mm + "." + yy;
+    return dd + "." + mm + "." + yy;
 
-}
+  }
