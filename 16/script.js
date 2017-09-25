@@ -50,8 +50,8 @@ var buffer = makeBuffer();
 
 buffer("Тест");
 buffer(" тебя не съест ");
-alert( buffer() ); // Тест тебя не съест
+alert( buffer() );
 
 buffer.clear();
 
-alert( buffer() ); // ""
+alert( buffer() );
