@@ -90,7 +90,7 @@ function byField(field) {
 }
 */
 
-
+/*
 var arr = [1, 2, 3, 4, 5, 6, 7];
 
 alert(filter(arr, function(a) {
@@ -121,9 +121,31 @@ function inBetween(a, b) {
 function inArray(arr) {
   return function (x) {
     return arr.indexOf(x) != -1;
-    //for (var j = 0; j < arr.length; j++) {
-      //if (x == arr[j]) {
-      //  return true;
-      //}
-    };
+
+  };
+} */
+
+function makeArmy() {
+
+  var shooters = [];
+
+  for (var i = 0; i < 10; i++) {
+
+    var shooter = (function(x) {
+
+      return function() {
+        alert( x );
+      };
+
+    })(i);
+
+    shooters.push(shooter);
   }
+
+  return shooters;
+}
+
+var army = makeArmy();
+
+army[0](); // 0
+army[1](); // 1
