@@ -36,6 +36,7 @@ function sum(a) {
 }
 */
 
+/*
 function Calculator(){
   this.read = function() {
     this.a = +prompt('a?',0);
@@ -56,3 +57,19 @@ calculator.read();
 
 alert( "Сумма=" + calculator.sum() );
 alert( "Произведение=" + calculator.mul() );
+
+*/
+
+var accumulator = new Accumulator(1); // начальное значение 1
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+alert( accumulator.value ); // выведет текущее значение
+
+function Accumulator(startValue) {
+  this.value = startValue;
+
+  this.read = function () {
+    this.value += +prompt('Введите число для добавления', 0);
+  };
+
+}
