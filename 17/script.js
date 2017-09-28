@@ -121,6 +121,8 @@ alert( vasya.fullName ); // Василий Сидоров
 
 */
 
+/*
+
 function Article() {
   this.created = new Date();
   Article.count++;
@@ -140,3 +142,23 @@ Article.showStats(); // Всего: 2, Последняя: (дата)
 new Article();
 
 Article.showStats(); // Всего: 3, Последняя: (дата)
+
+*/
+
+
+function sum(arr) {
+  return arr.reduce(function(a, b) {
+    return a + b;
+  });
+}
+
+alert( sum([1, 2, 3]) ); // 6 (=1+2+3)
+
+function sumArgs() {
+  arguments.reduce = [].reduce; // одолжили метод (1)
+  return argument.reduce(function(a, b) {
+    return a + b;
+    });
+}
+
+alert( sumArgs(1, 2, 3) );
