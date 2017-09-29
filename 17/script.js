@@ -180,15 +180,19 @@ function applyAll(func) {
 }
 */
 
+/*
+
 function work(a) {
   return a;
 }
 
 function makeLogging(f, log) {
-  return function (a) {
+
+  function wrapper(a) {
     log.push(a);
-    return f.apply(this, arguments);
+    return f.call(this, a);
   }
+  return wrapper;
 }
 
 var log = [];
@@ -199,4 +203,32 @@ work(5); // 5, добавлено в log
 
 for (var i = 0; i < log.length; i++) {
   alert( 'Лог:' + log[i] ); // "Лог:1", затем "Лог:5"
+}
+*/
+
+
+function work(a, b) {
+  alert( a + b ); // work - произвольная функция
+}
+
+function makeLogging(f, log) {
+  function wrapper() {
+    for (var i = 0; i < arguments.length; i++){
+      log.push(arguments[0]);
+    }
+    //log.push([].slice.call(arguments));
+    return f.apply(this, arguments);
+  }
+  return wrapper;
+}
+
+var log = [];
+work = makeLogging(work, log);
+
+work(1, 2); // 3
+work(4, 5); // 9
+
+for (var i = 0; i < log.length; i++) {
+  var args = log[i]; // массив из аргументов i-го вызова
+  alert( 'Лог:' + args.join() ); // "Лог:1,2", "Лог:4,5"
 }
