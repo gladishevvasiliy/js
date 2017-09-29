@@ -206,7 +206,7 @@ for (var i = 0; i < log.length; i++) {
 }
 */
 
-
+/*
 function work(a, b) {
   alert( a + b ); // work - произвольная функция
 }
@@ -232,3 +232,35 @@ for (var i = 0; i < log.length; i++) {
   var args = log[i]; // массив из аргументов i-го вызова
   alert( 'Лог:' + args.join() ); // "Лог:1,2", "Лог:4,5"
 }
+
+*/
+
+function f(x) {
+  return Math.random() * x; // random для удобства тестирования
+}
+
+function makeCaching(f) {
+  var last, result;
+
+  function wrapper(a) {
+    if (a == last){
+      return result;
+    }
+    last = a;
+    result = f.call(this, a);
+    return result;
+
+  }
+  return wrapper;
+}
+
+f = makeCaching(f);
+
+var a, b;
+
+a = f(1);
+b = f(1);
+alert( a == b ); // true (значение закешировано)
+
+b = f(2);
+alert( a == b ); // false, другой аргумент => другое значение
