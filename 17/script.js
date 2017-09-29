@@ -144,13 +144,15 @@ new Article();
 Article.showStats(); // Всего: 3, Последняя: (дата)
 
 */
-
+/*
 
 function sum(arr) {
   return arr.reduce(function(a, b) {
     return a + b;
   });
 }
+*/
+/*
 
 alert( sum([1, 2, 3]) ); // 6 (=1+2+3)
 
@@ -162,3 +164,39 @@ function sumArgs() {
 }
 
 alert( sumArgs(1, 2, 3) );
+
+*/
+
+/*
+
+// Применить Math.max к аргументам 2, -2, 3
+alert( applyAll(Math.max, 2, -2, 3) ); // 3
+
+// Применить Math.min к аргументам 2, -2, 3
+//alert( applyAll(Math.min, 2, -2, 3) ); // -2
+
+function applyAll(func) {
+  return func.apply(this, [].slice.call(arguments, 1));
+}
+*/
+
+function work(a) {
+  return a;
+}
+
+function makeLogging(f, log) {
+  return function (a) {
+    log.push(a);
+    return f.apply(this, arguments);
+  }
+}
+
+var log = [];
+work = makeLogging(work, log);
+
+work(1); // 1, добавлено в log
+work(5); // 5, добавлено в log
+
+for (var i = 0; i < log.length; i++) {
+  alert( 'Лог:' + log[i] ); // "Лог:1", затем "Лог:5"
+}
