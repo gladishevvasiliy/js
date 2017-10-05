@@ -64,7 +64,7 @@ function Machine(power) {
     this._enabled = false;
   };
 }*/
-
+/*
 function Machine(power) {
   this._power = power;
   this._enabled = false;
@@ -119,6 +119,7 @@ function Fridge(power) {
     });
 
     return filteredFood;*/
+    /*
   }
 
   var parentDisable = this.disable;
@@ -138,7 +139,7 @@ function Fridge(power) {
     if (index != -1){
       food.splice(index, 1);
     }
-
+*/
     /*for (var i = 0; i < food.length; i++) {
       if (food[i].title == item) {
         food.splice(i, 1);
@@ -192,8 +193,3 @@ dietItems.forEach(function(item) {
 
 alert( fridge.getFood().length ); // 2
 */
-
-var fridge = new Fridge(500);
-fridge.enable();
-fridge.addFood("кус-кус");
-fridge.disable(); // ошибка, в холодильнике есть еда
